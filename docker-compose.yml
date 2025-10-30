@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  app:
+    # Build the image from the Dockerfile in the current directory
+    build: .
+    ports:
+      # Map port 8501 on your computer (host) to port 8501 in the container
+      - "8501:8501"
+    volumes:
+      # Mount the current directory ('.') into the container at /app
+      # This is for development: it syncs your local app.py with the container,
+      # so Streamlit can live-reload when you save changes.
+      - .:/app
+
